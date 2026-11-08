@@ -36,3 +36,5 @@ summary{cursor:pointer;font-weight:600}
 @media (max-width:560px){.features{grid-template-columns:1fr}h1{font-size:27px}.hero h1{font-size:38px}.lead{font-size:18px}}
 .doc{padding-top:64px}
 @media (max-width:560px){.doc{padding-top:44px}}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px}
+.langs{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:12px!important}

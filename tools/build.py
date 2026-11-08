@@ -17,7 +17,7 @@ TPL = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="icon" href="{root}assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="{root}assets/style.css">
 {alts}
 </head>
@@ -30,8 +30,10 @@ TPL = """<!doctype html>
 {body}
 </main>
 <footer class="wrap foot">
-  <p>{langs}</p>
-  <p>© 2026 WooMo · {foot} · <a href="mailto:{email}">{email}</a></p>
+  <p class="langs">{langs}</p>
+  <p>© 2026 WooMo</p>
+  <p>{foot}</p>
+  <p><a href="mailto:{email}">{email}</a></p>
 </footer>
 </body>
 </html>
@@ -47,11 +49,11 @@ for lang, (lname, lp) in LANGS.items():
         n = NAV[lang]
         links = [("index", n[0]), ("privacy", n[1]), ("terms", n[2]), ("support", n[3])]
         nav = " ".join(f'<a href="{root}{lp}{p}.html"{" aria-current=\"page\"" if p == page else ""}>{t}</a>' for p, t in links)
-        langs = n[4] + ": " + " · ".join(
+        langs = f"<span>{n[4]}:</span> " + " ".join(
             (f"<strong>{nm}</strong>" if l == lang else f'<a href="{root}{p2}{page}.html" hreflang="{l}">{nm}</a>')
             for l, (nm, p2) in LANGS.items())
         alts = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{root}{p2}{page}.html">' for l, (nm, p2) in LANGS.items())
-        title = meta["title"] if page == "index" else f'{meta["title"]} · WooMo'
+        title = meta["title"] if page == "index" else f'{meta["title"]} — WooMo'
         doc = TPL.format(lang=lang, title=html.escape(title), desc=html.escape(meta["title"]), root=root, lp=lp, nav=nav,
                          alts=alts, body=body.replace("__ROOT__", root), cls=" home" if "home" in meta else " doc",
                          langs=langs, foot=FOOT[lang], email=email)
