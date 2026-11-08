@@ -17,7 +17,9 @@ TPL = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" sizes="32x32" href="{root}assets/blank-32.png">
+<link rel="shortcut icon" href="{root}assets/blank-32.png">
+<link rel="apple-touch-icon" href="{root}assets/blank-180.png">
 <link rel="stylesheet" href="{root}assets/style.css">
 {alts}
 </head>
