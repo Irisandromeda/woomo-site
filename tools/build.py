@@ -23,7 +23,7 @@ TPL = """<!doctype html>
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="{root}{lp}index.html"><img src="{root}assets/icon.svg" alt="" width="32" height="32"> WooMo</a>
+  <a class="brand" href="{root}{lp}index.html">WooMo</a>
   <nav>{nav}</nav>
 </div></header>
 <main class="wrap{cls}">
