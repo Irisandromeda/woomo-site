@@ -8,7 +8,7 @@ NAV = {
  "uk": ("Головна", "Конфіденційність", "Умови", "Підтримка", "Мова"),
  "ru": ("Главная", "Конфиденциальность", "Условия", "Поддержка", "Язык"),
 }
-FOOT = {"en": "WooMo is developed by Olha Dyka, Ukraine.", "uk": "WooMo розробляє Ольга Дика, Україна.", "ru": "WooMo разрабатывает Ольга Дыка, Украина."}
+FOOT = {"en": "WooMo is developed by Olha Dyka, Ukraine.", "uk": "WooMo розробляє Ольга Дика, Україна.", "ru": "WooMo разрабатывает Ольга Дикая, Украина."}
 PAGES = ["index", "privacy", "terms", "support"]
 TPL = """<!doctype html>
 <html lang="{lang}">
